@@ -17,6 +17,7 @@
 		08265516283BB4090044F61D /* TaskViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08265514283BB4090044F61D /* TaskViewCell.swift */; };
 		08265517283BB4090044F61D /* TaskViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08265515283BB4090044F61D /* TaskViewCell.xib */; };
 		0826551A283BB6CB0044F61D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08265519283BB6CB0044F61D /* Constants.swift */; };
+		0847C36C283BFA8700DA513A /* CreateNewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0847C36B283BFA8700DA513A /* CreateNewTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		08265514283BB4090044F61D /* TaskViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewCell.swift; sourceTree = "<group>"; };
 		08265515283BB4090044F61D /* TaskViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskViewCell.xib; sourceTree = "<group>"; };
 		08265519283BB6CB0044F61D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0847C36B283BFA8700DA513A /* CreateNewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				082654FD283BB0E50044F61D /* AppDelegate.swift */,
 				082654FF283BB0E50044F61D /* SceneDelegate.swift */,
 				08265501283BB0E50044F61D /* TasksViewController.swift */,
+				0847C36B283BFA8700DA513A /* CreateNewTaskViewController.swift */,
 				08265518283BB4120044F61D /* TaskViewCell */,
 				08265503283BB0E50044F61D /* Main.storyboard */,
 				0826550B283BB0E60044F61D /* LaunchScreen.storyboard */,
@@ -161,6 +164,7 @@
 			files = (
 				08265502283BB0E50044F61D /* TasksViewController.swift in Sources */,
 				082654FE283BB0E50044F61D /* AppDelegate.swift in Sources */,
+				0847C36C283BFA8700DA513A /* CreateNewTaskViewController.swift in Sources */,
 				08265516283BB4090044F61D /* TaskViewCell.swift in Sources */,
 				08265500283BB0E50044F61D /* SceneDelegate.swift in Sources */,
 				08265508283BB0E50044F61D /* To_Do.xcdatamodeld in Sources */,
