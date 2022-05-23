@@ -8,17 +8,27 @@
 import UIKit
 
 class TaskViewCell: UITableViewCell {
-
+    @IBOutlet weak var imageTypeTask: UIImageView!
+    @IBOutlet weak var textTaskLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func configureTaskCell(idTypeTask: Int, textTask: String){
+        
+        imageTypeTask.image = assignIconFormIdToImage(idIcon: idTypeTask)
+        textTaskLabel.text = textTask
+        
     }
 
+    private func assignIconFormIdToImage(idIcon: Int) -> UIImage{
+        switch idIcon{
+        case 0: return K.jobIconImage!
+        case 1: return K.shopIconImage!
+        default: return K.otherIconImage!
+        }
+    }
     
 }
