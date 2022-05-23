@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tasks View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="To_Do" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TasksViewController" customModule="To_Do" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,7 +32,7 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="18"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="T1H-t1-UfZ" kind="show" id="7Dc-gv-F9U"/>
+                                    <segue destination="T1H-t1-UfZ" kind="show" id="pBc-Ho-ppw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -48,6 +48,9 @@
                             <constraint firstItem="gj5-oZ-Isd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="vGk-j1-H3a"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="me7-Yv-SkM" id="7Mu-vm-5Sa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
