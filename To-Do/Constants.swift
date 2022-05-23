@@ -16,7 +16,7 @@ struct K{
     static let otherIconImage = UIImage(named: "other-icon")
     
     struct EntityTaskNameValue{
-        static let nameEntity = "TasksEntitie"
+        static let nameEntity = "TasksEntity"
         static let typeTask = "typeTask"
         static let textTask = "textTask"
         static let isDone = "isDone"
