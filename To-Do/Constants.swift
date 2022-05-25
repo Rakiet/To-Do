@@ -11,6 +11,8 @@ struct K{
     static let taskViewCellNibName = "TaskViewCell"
     static let taskViewCellIdentifier = "TaskCell"
     
+    static let sequeToCreateNewTask = "sequeToCreateNewTask"
+    
     static let jobIconImage = UIImage(named: "job-icon")
     static let shopIconImage = UIImage(named: "shop-icon")
     static let otherIconImage = UIImage(named: "other-icon")
