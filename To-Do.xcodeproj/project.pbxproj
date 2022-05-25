@@ -18,6 +18,7 @@
 		08265517283BB4090044F61D /* TaskViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08265515283BB4090044F61D /* TaskViewCell.xib */; };
 		0826551A283BB6CB0044F61D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08265519283BB6CB0044F61D /* Constants.swift */; };
 		0847C36C283BFA8700DA513A /* CreateNewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0847C36B283BFA8700DA513A /* CreateNewTaskViewController.swift */; };
+		0847C36F283C09CC00DA513A /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0847C36E283C09CC00DA513A /* TaskModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		08265515283BB4090044F61D /* TaskViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskViewCell.xib; sourceTree = "<group>"; };
 		08265519283BB6CB0044F61D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0847C36B283BFA8700DA513A /* CreateNewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTaskViewController.swift; sourceTree = "<group>"; };
+		0847C36E283C09CC00DA513A /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		082654FC283BB0E50044F61D /* To-Do */ = {
 			isa = PBXGroup;
 			children = (
+				0847C36D283C099F00DA513A /* Model */,
 				082654FD283BB0E50044F61D /* AppDelegate.swift */,
 				082654FF283BB0E50044F61D /* SceneDelegate.swift */,
 				08265501283BB0E50044F61D /* TasksViewController.swift */,
@@ -88,6 +91,14 @@
 				08265515283BB4090044F61D /* TaskViewCell.xib */,
 			);
 			path = TaskViewCell;
+			sourceTree = "<group>";
+		};
+		0847C36D283C099F00DA513A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0847C36E283C09CC00DA513A /* TaskModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +179,7 @@
 				08265516283BB4090044F61D /* TaskViewCell.swift in Sources */,
 				08265500283BB0E50044F61D /* SceneDelegate.swift in Sources */,
 				08265508283BB0E50044F61D /* To_Do.xcdatamodeld in Sources */,
+				0847C36F283C09CC00DA513A /* TaskModel.swift in Sources */,
 				0826551A283BB6CB0044F61D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
