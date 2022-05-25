@@ -13,24 +13,21 @@ class TasksViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     
-    var taskFromCoreData: [TaskModel] = []
+    var taskFromCoreData = [TasksEntity]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.register(TaskViewCell.nib(), forCellReuseIdentifier: K.taskViewCellIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
         navigationController?.navigationBar.isHidden = true
         
-      
-       
-        
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         do{
-            try taskFromCoreData = DatabaseManagement.readBase()
+             taskFromCoreData = try DatabaseManagement.readBase()
         } catch {
             
         }
@@ -38,10 +35,6 @@ class TasksViewController: UIViewController {
     }
 
 }
-
-
-
-
 
 extension TasksViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,15 +46,37 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource{
         
         if let taskCell = tableView.dequeueReusableCell(withIdentifier: K.taskViewCellIdentifier, for: indexPath) as? TaskViewCell{
             let model = taskFromCoreData[indexPath.row]
-            taskCell.configureTaskCell(idTypeTask: model.typeTask, textTask: model.textTask)
+            taskCell.configureTaskCell(idTypeTask: model.typeTask, textTask: model.textTask ?? "BRAK")
             
             cell = taskCell
         }
         
         return cell
     }
-
-
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            MessageAlert.aceptAlert(title: "Uwaga", message: "Twoje dane przepadną i nie będzie można ich odzyskać", vc: self, completionHeander: {(success) -> Void in
+                
+                if success{
+                    DatabaseManagement.deleteData(taskToDelete: self.taskFromCoreData[indexPath.row])
+                    self.taskFromCoreData.remove(at: indexPath.row)
+                    self.tableView.beginUpdates()
+                    self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                    self.tableView.endUpdates()
+                }
+            })
+            
+            
+            
+            
+        }
+    }
+    
+    
 }
 
 
