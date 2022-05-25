@@ -11,12 +11,13 @@
         <!--Tasks View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="TasksViewController" customModule="To_Do" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="me7-Yv-SkM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="me7-Yv-SkM">
                                 <rect key="frame" x="0.0" y="88" width="414" height="694"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -32,7 +33,7 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="18"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="T1H-t1-UfZ" kind="show" id="pBc-Ho-ppw"/>
+                                    <segue destination="T1H-t1-UfZ" kind="show" identifier="sequeToCreateNewTask" id="pBc-Ho-ppw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -53,7 +54,6 @@
                         <outlet property="tableView" destination="me7-Yv-SkM" id="7Mu-vm-5Sa"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="65.625"/>
         </scene>
@@ -94,6 +94,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Anuluj Zadanie ">
                                             <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="18"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="cancelSaveAction:" destination="T1H-t1-UfZ" eventType="touchUpInside" id="Lkb-8z-lar"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -145,6 +148,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bsD-ey-0H7"/>
+                    <connections>
+                        <outlet property="textTaskTextField" destination="350-x9-Ue7" id="yxB-eG-Gaw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7yd-uW-Et1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -153,6 +159,7 @@
         <!--Navigation Controller-->
         <scene sceneID="C0o-UC-YOO">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6nJ-8k-MXF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZDr-Se-c7l" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QUw-BV-zN9">
@@ -164,7 +171,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="75t-Gg-mlG"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6nJ-8k-MXF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="65.625"/>
         </scene>
