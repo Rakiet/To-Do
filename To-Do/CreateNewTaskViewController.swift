@@ -7,47 +7,51 @@
 
 import UIKit
 import CoreData
-
+enum saveDataError: Error{
+    case textFileIsEmpty
+}
 class CreateNewTaskViewController: UIViewController {
 
+    @IBOutlet weak var textTaskTextField: UITextField!
     
+    var typeTaskSelect = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        textTaskTextField.delegate = self
         // Do any additional setup after loading the view.
     }
     
     @IBAction func segmentCategoryControl(_ sender: UISegmentedControl) {
-        print(sender.selectedSegmentIndex)
-    }
-    
-    
-
-    func saveData(){
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: K.EntityTaskNameValue.nameEntity, in: context)
-        let createe = NSManagedObject(entity: entity!, insertInto: context)
-        createe.setValue("Tutaj tekst zadania", forKey: K.EntityTaskNameValue.textTask)
-        createe.setValue(Int16(1), forKey: K.EntityTaskNameValue.typeTask)
-        createe.setValue(false, forKey: K.EntityTaskNameValue.isDone)
-        createe.setValue(Date(), forKey: K.EntityTaskNameValue.dateCreateTask)
-        
-        do{
-            try context.save()
-            print("saved")
-        } catch{
-            print("Failed saving")
-        }
-        
+        typeTaskSelect = sender.selectedSegmentIndex
     }
     
     @IBAction func saveNewTask(_ sender: Any) {
-        saveData()
-        navigationController?.popToRootViewController(animated: true)
+        do {
+            try DatabaseManagement.saveData(textTaskTextField: textTaskTextField, typeTaskSelect: typeTaskSelect)
+        } catch saveDataError.textFileIsEmpty{
+            MessageAlert.showBasicAlert(title: "Błąd", message: "Pole zadania jest puste", vc: self)
+            return
+        } catch {
+            MessageAlert.showBasicAlert(title: "Błąd", message: "Nieznany błąd, spróbuj zapisać za chwilę", vc: self)
+        }
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func cancelSaveAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
     
 
-
+}
+extension CreateNewTaskViewController: UITextFieldDelegate{
+    //ukrywanie ekranu po nacisnieciu przycisku "return" na klawiaturze
+        func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
+            self.view.endEditing(true)
+            return true
+        }
+        //ukrywanie klawiatury po kliknieciu w dowolne miejsce na ekranie
+        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
 }
