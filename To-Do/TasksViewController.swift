@@ -29,40 +29,14 @@ class TasksViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        readBase()
+        do{
+            try taskFromCoreData = DatabaseManagement.readBase()
+        } catch {
+            
+        }
         tableView.reloadData()
     }
-        
-   
-    func readBase(){
-        taskFromCoreData = []
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: K.EntityTaskNameValue.nameEntity)
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] {
-                let typeTask = data.value(forKey: K.EntityTaskNameValue.typeTask) as! Int16
-                let textTask = data.value(forKey: K.EntityTaskNameValue.textTask) as! String
-                let isDone = data.value(forKey: K.EntityTaskNameValue.isDone) as! Bool
-                let time = data.value(forKey: K.EntityTaskNameValue.dateCreateTask) as! Date
-                self.taskFromCoreData.append(TaskModel(typeTask: typeTask, textTask: textTask, isDone: isDone, dateCreateTask: time))
-                
-                
-            }
-        } catch {
-            print("Failed")
-        }
-    }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let viewController = segue.destination as? CreateNewTaskViewController {
-//            viewController.managedObjectContext = persistentContainer.viewContext
-//            print("FDfdfd")
-//        }
-//    }
-    
+
 }
 
 
