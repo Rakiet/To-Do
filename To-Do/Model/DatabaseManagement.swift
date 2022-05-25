@@ -35,26 +35,29 @@ class DatabaseManagement: NSManagedObject {
         }
     }
     
-    class func readBase()throws -> [TaskModel] {
-        var taskFromCoreData:[TaskModel] = []
+    class func readBase()throws -> [TasksEntity] {
+        var taskFromCoreData:[TasksEntity] = []
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: K.EntityTaskNameValue.nameEntity)
         request.returnsObjectsAsFaults = false
         do {
-            let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] {
-                let typeTask = data.value(forKey: K.EntityTaskNameValue.typeTask) as! Int16
-                let textTask = data.value(forKey: K.EntityTaskNameValue.textTask) as! String
-                let isDone = data.value(forKey: K.EntityTaskNameValue.isDone) as! Bool
-                let time = data.value(forKey: K.EntityTaskNameValue.dateCreateTask) as! Date
-                taskFromCoreData.append(TaskModel(typeTask: typeTask, textTask: textTask, isDone: isDone, dateCreateTask: time))
-                
-                
-            }
+            taskFromCoreData = try (context.fetch(request) as! [TasksEntity])
         } catch {
             throw error
         }
         return taskFromCoreData
     }
+    
+    class func deleteData(taskToDelete: TasksEntity) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        context.delete(taskToDelete as NSManagedObject)
+        
+        do {
+          try context.save()
+        } catch {
+           print("Error saving context \(error)")
+        }
+
+        }
 }
