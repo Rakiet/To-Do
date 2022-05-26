@@ -23,8 +23,7 @@ class DatabaseManagement: NSManagedObject {
         let create = NSManagedObject(entity: entity!, insertInto: context)
         create.setValue(textTask, forKey: K.EntityTaskNameValue.textTask)
         create.setValue(Int16(typeTaskSelect), forKey: K.EntityTaskNameValue.typeTask)
-        create.setValue(false, forKey: K.EntityTaskNameValue.isDone)
-        create.setValue(dateDoTask, forKey: K.EntityTaskNameValue.dateCreateTask)
+        create.setValue(dateDoTask, forKey: K.EntityTaskNameValue.dateTask)
         
         do{
             try context.save()

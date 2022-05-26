@@ -21,7 +21,6 @@ struct K{
         static let nameEntity = "TasksEntity"
         static let typeTask = "typeTask"
         static let textTask = "textTask"
-        static let isDone = "isDone"
-        static let dateCreateTask = "dateCreateTask"
+        static let dateTask = "dateTask"
     }
 }
