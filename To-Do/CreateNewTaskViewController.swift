@@ -14,11 +14,16 @@ class CreateNewTaskViewController: UIViewController {
 
     @IBOutlet weak var textTaskTextField: UITextField!
     
+    @IBOutlet weak var dataPickerOutlet: UIDatePicker!
+    
+    @IBOutlet weak var stackViewForDateTextFieldAndTaskTextField: UIStackView!
+    
     var typeTaskSelect = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         textTaskTextField.delegate = self
+        dataPickerOutlet.minimumDate = Date()
         // Do any additional setup after loading the view.
     }
     
@@ -26,6 +31,14 @@ class CreateNewTaskViewController: UIViewController {
         typeTaskSelect = sender.selectedSegmentIndex
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        if size.height > size.width{
+            stackViewForDateTextFieldAndTaskTextField.axis = .vertical
+        }else {
+            stackViewForDateTextFieldAndTaskTextField.axis = .horizontal
+        }
+    }
+
     @IBAction func saveNewTask(_ sender: Any) {
         do {
             try DatabaseManagement.saveData(textTaskTextField: textTaskTextField, typeTaskSelect: typeTaskSelect)
