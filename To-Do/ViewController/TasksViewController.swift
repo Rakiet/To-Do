@@ -72,7 +72,7 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            MessageAlert.aceptAlert(title: "Uwaga", message: "Twoje dane przepadną i nie będzie można ich odzyskać", vc: self, completionHeander: {(success) -> Void in
+            MessageAlert.deleteAlert(title: "Uwaga", message: "Twoje dane przepadną i nie będzie można ich odzyskać", vc: self, completionHeander: {(success) -> Void in
                 
                 if success{
                     DatabaseManagement.deleteData(taskToDelete: self.taskFromCoreData[indexPath.row])
