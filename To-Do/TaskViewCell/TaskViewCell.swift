@@ -10,6 +10,8 @@ import UIKit
 class TaskViewCell: UITableViewCell {
     @IBOutlet weak var imageTypeTask: UIImageView!
     @IBOutlet weak var textTaskLabel: UILabel!
+    @IBOutlet weak var dateTextLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
