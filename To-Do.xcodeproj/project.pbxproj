@@ -72,14 +72,12 @@
 		082654FC283BB0E50044F61D /* To-Do */ = {
 			isa = PBXGroup;
 			children = (
+				082C8D08283F7B50004315E1 /* View */,
+				082C8D07283F7B2F004315E1 /* ViewController */,
 				0847C36D283C099F00DA513A /* Model */,
+				08265518283BB4120044F61D /* TaskViewCell */,
 				082654FD283BB0E50044F61D /* AppDelegate.swift */,
 				082654FF283BB0E50044F61D /* SceneDelegate.swift */,
-				08265501283BB0E50044F61D /* TasksViewController.swift */,
-				0847C36B283BFA8700DA513A /* CreateNewTaskViewController.swift */,
-				08265518283BB4120044F61D /* TaskViewCell */,
-				08265503283BB0E50044F61D /* Main.storyboard */,
-				0826550B283BB0E60044F61D /* LaunchScreen.storyboard */,
 				08265519283BB6CB0044F61D /* Constants.swift */,
 				08265509283BB0E60044F61D /* Assets.xcassets */,
 				0826550E283BB0E60044F61D /* Info.plist */,
@@ -95,6 +93,24 @@
 				08265515283BB4090044F61D /* TaskViewCell.xib */,
 			);
 			path = TaskViewCell;
+			sourceTree = "<group>";
+		};
+		082C8D07283F7B2F004315E1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				08265501283BB0E50044F61D /* TasksViewController.swift */,
+				0847C36B283BFA8700DA513A /* CreateNewTaskViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		082C8D08283F7B50004315E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				08265503283BB0E50044F61D /* Main.storyboard */,
+				0826550B283BB0E60044F61D /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		0847C36D283C099F00DA513A /* Model */ = {
