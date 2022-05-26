@@ -11,7 +11,7 @@ import CoreData
 class DatabaseManagement: NSManagedObject {
     
     
-    class func saveData(textTaskTextField: UITextField, typeTaskSelect: Int) throws{
+    class func saveData(textTaskTextField: UITextField, typeTaskSelect: Int, dateDoTask: Date) throws{
         
         let textTask = textTaskTextField.text!
         if textTask.isEmpty {
@@ -24,7 +24,7 @@ class DatabaseManagement: NSManagedObject {
         create.setValue(textTask, forKey: K.EntityTaskNameValue.textTask)
         create.setValue(Int16(typeTaskSelect), forKey: K.EntityTaskNameValue.typeTask)
         create.setValue(false, forKey: K.EntityTaskNameValue.isDone)
-        create.setValue(Date(), forKey: K.EntityTaskNameValue.dateCreateTask)
+        create.setValue(dateDoTask, forKey: K.EntityTaskNameValue.dateCreateTask)
         
         do{
             try context.save()
