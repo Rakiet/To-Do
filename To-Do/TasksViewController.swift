@@ -26,14 +26,28 @@ class TasksViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        loadDataFromDataBase()
+    }
+    
+    func loadDataFromDataBase(){
         do{
              taskFromCoreData = try DatabaseManagement.readBase()
         } catch {
-            
+            print(error.localizedDescription)
         }
-        tableView.reloadData()
+        
+        taskDataBaseIsEmpty(reloadDataWhenTaskEntityIsNotEmpty: true)
     }
-
+    
+    func taskDataBaseIsEmpty(reloadDataWhenTaskEntityIsNotEmpty reload:Bool){
+        if !taskFromCoreData.isEmpty{
+            if reload{
+                tableView.reloadData()
+            }
+        }else{
+            MessageAlert.showBasicAlert(title: "Brak Zadań", message: "Nie masz wprowadzonych żadnych zadań, dodaj zadanie korzystając z przycisku Dodaj Zadanie", vc: self)
+        }
+    }
 }
 
 extension TasksViewController: UITableViewDelegate, UITableViewDataSource{
@@ -50,7 +64,6 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource{
             
             cell = taskCell
         }
-        
         return cell
     }
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -67,16 +80,12 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource{
                     self.tableView.beginUpdates()
                     self.tableView.deleteRows(at: [indexPath], with: .automatic)
                     self.tableView.endUpdates()
+                    
+                    self.taskDataBaseIsEmpty(reloadDataWhenTaskEntityIsNotEmpty: false)
                 }
             })
-            
-            
-            
-            
         }
     }
-    
-    
 }
 
 
