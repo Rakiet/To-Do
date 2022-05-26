@@ -24,5 +24,7 @@ Jeżeli pole tekstowe pozostanie pustę wyświetlony zostanie nam odpowiedni kom
 
 Aplikacja została przystosowana zarówno do pracy w pionie jak i poziomie 
 
-<img src="https://user-images.githubusercontent.com/25162169/170472548-12eed21b-06c3-4465-8618-33ab5033aa89.mp4" width="250">
+Komórka w TabelView automatycznie się dopasowuje zależnie od długości tekstu wpisanego 
+
+<img src="https://user-images.githubusercontent.com/25162169/170477563-b3019703-2322-4f35-8536-e538766203eb.mp4" width="250">
 
