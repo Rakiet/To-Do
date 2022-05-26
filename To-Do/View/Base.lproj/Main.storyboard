@@ -76,7 +76,7 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Zapisz Zadanie ">
+                                        <buttonConfiguration key="configuration" style="plain" title="Dodaj zadanie">
                                             <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="18"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -91,7 +91,7 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Anuluj Zadanie ">
+                                        <buttonConfiguration key="configuration" style="plain" title="Anuluj">
                                             <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="18"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -150,9 +150,9 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="QxB-x0-g28">
-                                                <rect key="frame" x="97" y="39" width="120" height="50"/>
+                                                <rect key="frame" x="92" y="39" width="130" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="120" id="g8i-2q-Tf7"/>
+                                                    <constraint firstAttribute="width" constant="130" id="g8i-2q-Tf7"/>
                                                     <constraint firstAttribute="height" constant="50" id="lAx-tQ-wEA"/>
                                                 </constraints>
                                             </datePicker>

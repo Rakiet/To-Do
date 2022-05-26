@@ -20,7 +20,6 @@
 		082C8D04283E2DC0004315E1 /* MessageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C8D03283E2DC0004315E1 /* MessageAlert.swift */; };
 		082C8D06283E3629004315E1 /* DatabaseManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C8D05283E3629004315E1 /* DatabaseManagement.swift */; };
 		0847C36C283BFA8700DA513A /* CreateNewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0847C36B283BFA8700DA513A /* CreateNewTaskViewController.swift */; };
-		0847C36F283C09CC00DA513A /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0847C36E283C09CC00DA513A /* TaskModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +38,6 @@
 		082C8D03283E2DC0004315E1 /* MessageAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAlert.swift; sourceTree = "<group>"; };
 		082C8D05283E3629004315E1 /* DatabaseManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManagement.swift; sourceTree = "<group>"; };
 		0847C36B283BFA8700DA513A /* CreateNewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTaskViewController.swift; sourceTree = "<group>"; };
-		0847C36E283C09CC00DA513A /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +114,6 @@
 		0847C36D283C099F00DA513A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0847C36E283C09CC00DA513A /* TaskModel.swift */,
 				082C8D03283E2DC0004315E1 /* MessageAlert.swift */,
 				082C8D05283E3629004315E1 /* DatabaseManagement.swift */,
 			);
@@ -203,7 +200,6 @@
 				08265500283BB0E50044F61D /* SceneDelegate.swift in Sources */,
 				08265508283BB0E50044F61D /* To_Do.xcdatamodeld in Sources */,
 				082C8D06283E3629004315E1 /* DatabaseManagement.swift in Sources */,
-				0847C36F283C09CC00DA513A /* TaskModel.swift in Sources */,
 				0826551A283BB6CB0044F61D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
