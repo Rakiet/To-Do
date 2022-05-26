@@ -180,6 +180,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="bsD-ey-0H7"/>
                     <connections>
+                        <outlet property="buttonStackOutlet" destination="j35-2S-bkK" id="yh6-1k-rgU"/>
                         <outlet property="dataPickerOutlet" destination="QxB-x0-g28" id="EPc-s4-YfU"/>
                         <outlet property="stackViewForDateTextFieldAndTaskTextField" destination="X42-pP-acF" id="drx-hA-Wza"/>
                         <outlet property="textTaskTextField" destination="350-x9-Ue7" id="yxB-eG-Gaw"/>

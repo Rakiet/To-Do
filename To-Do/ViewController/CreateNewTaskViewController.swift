@@ -24,6 +24,9 @@ class CreateNewTaskViewController: UIViewController {
     
     @IBOutlet weak var stackViewForDateTextFieldAndTaskTextField: UIStackView!
     
+    @IBOutlet weak var buttonStackOutlet: UIStackView!
+    
+    
     var typeTaskSelect = 0
     
     var saveNewTaskDelegaye: SaveNewTaskProtocol!
@@ -74,8 +77,10 @@ class CreateNewTaskViewController: UIViewController {
     func viewChangePosition(size: CGSize){
         if size.height > size.width{
             stackViewForDateTextFieldAndTaskTextField.axis = .vertical
+            buttonStackOutlet.axis = .vertical
         }else {
             stackViewForDateTextFieldAndTaskTextField.axis = .horizontal
+            buttonStackOutlet.axis = .horizontal
         }
     }
 
