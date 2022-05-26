@@ -45,7 +45,15 @@ class CreateNewTaskViewController: UIViewController {
         } catch {
             MessageAlert.showBasicAlert(title: "Błąd", message: "Nieznany błąd, spróbuj zapisać za chwilę", vc: self)
         }
-        navigationController?.popViewController(animated: true)
+        
+        
+        MessageAlert.showCompletionAlert(title: "Sukces", message: "Zapisanie nowego zadania powiodło się.", vc: self, completionHeander: {(success) -> Void in
+            if success{
+                self.navigationController?.popViewController(animated: true)
+            }
+        })
+        
+        
     }
     
     @IBAction func cancelSaveAction(_ sender: Any) {
