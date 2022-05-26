@@ -4,7 +4,7 @@ Jeżeli baza danych jest pusta wyświetla się stosowny alert.
 
 <img src="https://user-images.githubusercontent.com/25162169/170472406-6fe9a160-e4b2-43d8-a60c-9cd9565ebfd6.mp4" width="250">
 
-Każde zadanie można przypisać do jednej z trzech kategorii. Każda kategoria posida indywidulaną ikonę. Po udanym zapisie wyświetla się alert, po którego akceptacji następuje powrót do listy zadań.
+Każde zadanie można przypisać do jednej z trzech kategorii. Każda kategoria posida indywidualną ikonę. Po udanym zapisie wyświetla się alert, po którego akceptacji następuje powrót do listy zadań.
 
 <img src="https://user-images.githubusercontent.com/25162169/170472442-dd073845-5c16-40c1-8258-512ef320198a.mp4" width="250">
 
