@@ -41,7 +41,7 @@ class CreateNewTaskViewController: UIViewController {
 
     @IBAction func saveNewTask(_ sender: Any) {
         do {
-            try DatabaseManagement.saveData(textTaskTextField: textTaskTextField, typeTaskSelect: typeTaskSelect)
+            try DatabaseManagement.saveData(textTaskTextField: textTaskTextField, typeTaskSelect: typeTaskSelect, dateDoTask: dataPickerOutlet.date)
         } catch saveDataError.textFileIsEmpty{
             MessageAlert.showBasicAlert(title: "Błąd", message: "Pole zadania jest puste", vc: self)
             return
