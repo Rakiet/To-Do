@@ -21,12 +21,8 @@ class TasksViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         navigationController?.navigationBar.isHidden = true
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         loadDataFromDataBase()
+        
     }
     
     func loadDataFromDataBase(){
@@ -84,6 +80,28 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource{
                     self.taskDataBaseIsEmpty(reloadDataWhenTaskEntityIsNotEmpty: false)
                 }
             })
+        }
+    }
+}
+
+extension TasksViewController: SaveNewTaskProtocol{
+    func didSaveNewTask(isSaved: Bool) {
+        if isSaved{
+            loadDataFromDataBase()
+            
+        }else{
+            print("nie zapisano nowego, nie odswiezamy nic ")
+        }
+    }
+    
+    
+}
+
+extension TasksViewController{
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == K.sequeToCreateNewTask){
+            let dvc = segue.destination as! CreateNewTaskViewController
+            dvc.saveNewTaskDelegaye = self
         }
     }
 }

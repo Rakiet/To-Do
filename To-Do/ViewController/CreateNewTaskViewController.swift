@@ -7,9 +7,15 @@
 
 import UIKit
 import CoreData
+
+protocol SaveNewTaskProtocol{
+    func didSaveNewTask(isSaved: Bool)
+}
+
 enum saveDataError: Error{
     case textFileIsEmpty
 }
+
 class CreateNewTaskViewController: UIViewController {
 
     @IBOutlet weak var textTaskTextField: UITextField!
@@ -19,6 +25,8 @@ class CreateNewTaskViewController: UIViewController {
     @IBOutlet weak var stackViewForDateTextFieldAndTaskTextField: UIStackView!
     
     var typeTaskSelect = 0
+    
+    var saveNewTaskDelegaye: SaveNewTaskProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +57,7 @@ class CreateNewTaskViewController: UIViewController {
         
         MessageAlert.showCompletionAlert(title: "Sukces", message: "Zapisanie nowego zadania powiodło się.", vc: self, completionHeander: {(success) -> Void in
             if success{
+                self.saveNewTaskDelegaye.didSaveNewTask(isSaved: true)
                 self.navigationController?.popViewController(animated: true)
             }
         })
@@ -57,6 +66,7 @@ class CreateNewTaskViewController: UIViewController {
     }
     
     @IBAction func cancelSaveAction(_ sender: Any) {
+        self.saveNewTaskDelegaye.didSaveNewTask(isSaved: false)
         navigationController?.popViewController(animated: true)
     }
     
