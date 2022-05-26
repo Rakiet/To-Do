@@ -90,7 +90,7 @@ extension TasksViewController: SaveNewTaskProtocol{
             loadDataFromDataBase()
             
         }else{
-            print("nie zapisano nowego, nie odswiezamy nic ")
+            taskDataBaseIsEmpty(reloadDataWhenTaskEntityIsNotEmpty: false)
         }
     }
     

@@ -66,8 +66,9 @@ class CreateNewTaskViewController: UIViewController {
     }
     
     @IBAction func cancelSaveAction(_ sender: Any) {
-        self.saveNewTaskDelegaye.didSaveNewTask(isSaved: false)
+        
         navigationController?.popViewController(animated: true)
+        self.saveNewTaskDelegaye.didSaveNewTask(isSaved: false)
     }
     
     func viewChangePosition(size: CGSize){
