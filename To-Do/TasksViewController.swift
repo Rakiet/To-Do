@@ -60,7 +60,7 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource{
         
         if let taskCell = tableView.dequeueReusableCell(withIdentifier: K.taskViewCellIdentifier, for: indexPath) as? TaskViewCell{
             let model = taskFromCoreData[indexPath.row]
-            taskCell.configureTaskCell(idTypeTask: model.typeTask, textTask: model.textTask ?? "BRAK")
+            taskCell.configureTaskCell(idTypeTask: model.typeTask, textTask: model.textTask ?? "BRAK", dateTask: model.dateCreateTask)
             
             cell = taskCell
         }
